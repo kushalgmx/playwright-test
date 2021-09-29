@@ -5,15 +5,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print a greeting
-        env:
-          MY_VAR: Hi there! My name is
-          FIRST_NAME: Mona
-          MIDDLE_NAME: The
-          LAST_NAME: Octocat
+      - name: use playwright to test
         run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
           export NODE_OPTIONS="--max-old-space-size=6144" && yarn && yarn run build
+          yarn --version
+          npm --version
+          node --version
+          ls -a
           npx playwright install
           yarn
           npx playwright test --update-snapshots
