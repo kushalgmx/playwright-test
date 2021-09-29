@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: use playwright to test
         run: |
-          export NODE_OPTIONS="--max-old-space-size=6144" && yarn && yarn run build
+          export NODE_OPTIONS="--max-old-space-size=6144"
           yarn --version
           npm --version
           node --version
