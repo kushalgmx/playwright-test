@@ -17,18 +17,4 @@ jobs:
           ls -a
           yarn
           npx playwright install
-          sudo npx playwright install-deps 
-          yarn run playwright test --update-snapshots
-          yarn run playwright test --browser=all
-      - run: git config user.name "Kushal";
-        if: always()
-      - run: git config user.email "kushal@gmx.com";
-        if: always()
-      - run: git add .;
-        if: always()
-      - run: git commit -m "run playwright tests" -m "on the cloud";
-        if: always()
-      - run: git pull --rebase --strategy-option=theirs;
-        if: always()
-      - run: git push origin master;
-        if: always()
+          sudo npx playwright install-deps
