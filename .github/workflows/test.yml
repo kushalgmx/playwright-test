@@ -5,8 +5,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: use playwright to test
+      - name: checkout project
         uses: actions/checkout@v2
+      - name: use playwright to test
         env:
           NODE_OPTIONS: "--max-old-space-size=6144"
         run: |
