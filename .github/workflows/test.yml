@@ -1,0 +1,17 @@
+name: test
+'on':
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+        export NODE_OPTIONS="--max-old-space-size=6144" && yarn && yarn run build
+        npx playwright install
+        yarn
+        npx playwright test --update-snapshots
+        npx playwright test --browser=all
