@@ -17,5 +17,6 @@ jobs:
           ls -a
           yarn
           npx playwright install
+          sudo npx playwright install-deps 
           yarn run playwright test --update-snapshots
           yarn run playwright test --browser=all
