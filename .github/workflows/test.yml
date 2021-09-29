@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: use playwright to test
+        uses: actions/checkout@v2
         env:
           NODE_OPTIONS: "--max-old-space-size=6144"
         run: |
@@ -13,7 +14,6 @@ jobs:
           npm --version
           node --version
           ls -a
-          npx playwright install
           yarn
-          npx playwright test --update-snapshots
-          npx playwright test --browser=all
+          yarn run playwright test --update-snapshots
+          yarn run playwright test --browser=all
