@@ -16,7 +16,4 @@ test('my test', async ({ page }) => {
   await page.click('text=Get Started');
   // Expect some text to be visible on the page.
   await expect(page.locator('text=System requirements').first()).toBeVisible();
-
-  // Compare screenshot with a stored reference.
-  expect(await page.screenshot()).toMatchSnapshot('get-started.png');
 });
