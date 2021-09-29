@@ -16,5 +16,6 @@ jobs:
           node --version
           ls -a
           yarn
+          npx playwright install
           yarn run playwright test --update-snapshots
           yarn run playwright test --browser=all
