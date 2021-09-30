@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ browser }) => {
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 10; i++) {
     const context = await browser.newContext();
     const page = await context.newPage();
     // Go to https://coloradoquiz.web.app/
