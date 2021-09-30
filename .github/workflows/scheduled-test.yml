@@ -22,3 +22,5 @@ jobs:
           npx playwright install
           sudo npx playwright install-deps
           yarn run playwright test --browser=all --config=tests/config.ts
+          yarn run playwright test --config=tests/mobile.ts
+
