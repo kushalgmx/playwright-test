@@ -10,6 +10,7 @@ const config: PlaywrightTestConfig = {
       use: {
         browserName: 'chromium',
         ...devices['Pixel 4'],
+        video: 'on'
       },
     },
 
@@ -19,6 +20,7 @@ const config: PlaywrightTestConfig = {
       use: {
         browserName: 'webkit',
         ...devices['iPhone 11'],
+        video: 'on'
       },
     },
   ],
