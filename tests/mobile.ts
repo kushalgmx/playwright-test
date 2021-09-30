@@ -3,14 +3,14 @@ import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   timeout: 3300000,
+  reporter: [['list'], ['json', { outputFile: 'test-results/mobile/mobile-report.json' }]],
   projects: [
     // "Pixel 4" tests use Chromium browser.
     {
       name: 'Pixel 4',
       use: {
         browserName: 'chromium',
-        ...devices['Pixel 4'],
-        video: 'on'
+        ...devices['Pixel 4']
       },
     },
 
@@ -19,8 +19,7 @@ const config: PlaywrightTestConfig = {
       name: 'iPhone 11',
       use: {
         browserName: 'webkit',
-        ...devices['iPhone 11'],
-        video: 'on'
+        ...devices['iPhone 11']
       },
     },
   ],
